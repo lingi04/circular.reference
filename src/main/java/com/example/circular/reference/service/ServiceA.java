@@ -12,13 +12,13 @@ public class ServiceA {
 	}
 
 	@Autowired
-	ServiceB serviceB;
+	ServiceC serviceC;
 
 	public String callA(){
 		return "Call Service A";
 	}
 
 	public String circularCall(){
-		return "Call Service A, " + serviceB.circularCall();
+		return "Call Service A, " + serviceC.circularCall();
 	}
 }
