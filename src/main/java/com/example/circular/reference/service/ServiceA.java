@@ -1,18 +1,18 @@
 package com.example.circular.reference.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ServiceA {
-	ServiceA(){
+	final
+	ServiceB serviceB;
+
+	ServiceA(ServiceB serviceB){
 		System.out.println("======================");
 		System.out.println("=      ServiceA      =");
 		System.out.println("======================");
+		this.serviceB = serviceB;
 	}
-
-	@Autowired
-	ServiceB serviceB;
 
 	public String callA(){
 		return "Call Service A";
