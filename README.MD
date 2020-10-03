@@ -14,8 +14,8 @@
     * AbstractApplicationContext.refresh
         * finishBeanFactoryInitialization() 에서 singleton으로 등록된 bean이 생성 됨.
     * Controller 어노테이션이 먼저 생성 되고(?),
-    * Controller 어노테이션을 붙인 bean(**wrappedInstance**)들이 순차적으로 생성 됨.
+    * Controller 어노테이션을 붙인 bean(*wrappedInstance*)들이 순차적으로 생성 됨.
         * `DefaultListableBeanFactory`(bean을 일괄 생성하는 역할을 함)의 `beanDefinitionNames`에 저장된 beanName의 순서대로 생성.
-        * 여기서 `beanDefinitionNames`의 순서와 별개로, 현재 생성된 bean이 의존하고 있는 다른 bean(**wrappedInstance**)이 있으면 그것부터 생성
+        * 여기서 `beanDefinitionNames`의 순서와 별개로, 현재 생성된 bean이 의존하고 있는 다른 bean(*wrappedInstance*)이 있으면 그것부터 생성
     * `mastr`브랜치를 실행시켜보면 `ServiceA` -> `ServiceB` -> `ServiceC` 순으로 생성되는 반면.
     * `order-of-bean-initialization`브랜치를 실행시켜보면 `ServiceA` -> `ServiceC` -> `ServiceB` 순으로 생성되는 것을 볼 수 있음.
