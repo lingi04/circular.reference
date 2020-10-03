@@ -18,10 +18,6 @@ public class ServiceA {
 		return "Call Service A";
 	}
 
-	public String callB(){
-		return "Call Service A, " + serviceB.callB();
-	}
-
 	public String circularCall(){
 		return "Call Service A, " + serviceB.circularCall();
 	}
